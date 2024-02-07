@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Box Shadow Generator</h1>
+    </nav>
+    <div class="container" style="display: flex; align-items: center;">
+        <aside>
+            <header>Box Shadow Options</header>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Horizontal Shadow Length</h1>
+                    <h3 id="horizon">10px</h3>
+                </div>
+                <div class="range">
+                    <input type="range" value="0" id="hor" min="-100" max="100" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Vertical Shadow Length</h1>
+                    <h3 id="vertic">10px</h3>
+                </div>
+                <div class="range">
+                    <input type="range" value="0" id="ver" min="-100" max="100" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Blur Radius</h1>
+                    <h3 id="blur">10px</h3>
+                </div>
+                <div class="range">
+                    <input type="range" value="5" id="bl" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Spread Radius</h1>
+                    <h3 id="spread">10px</h3>
+                </div>
+                <div class="range">
+                    <input type="range" value="0" id="spr" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Shadow Color</h1>
+                </div>
+                <div class="color">
+                    <p id="color">rgb(0,0,0)</p>
+                    <input type="color" id="cl" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Shadow Color Opacity</h1>
+                    <h3 id="opacity">10px</h3>
+                </div>
+                <div class="range">
+                    <input type="range" min="0" max="1" step="0.01" value="1" id="op" oninput="setBoxShadow()">
+                </div>
+            </div>
+            <div class="div">
+                <div class="div-header">
+                    <h1>Inset</h1>
+                </div>
+                <input type="checkbox" id="ins" oninput="setBoxShadow()">
+            </div>
+        </aside>
+        <main>
+            <div class="test" id="test"></div>
+            <div class="copy">
+                <p id="colorcopy">rgb(0,0,0)</p>
+                <i onclick="copy(this)" class="fa-solid fa-copy" style="color: royalblue; cursor: pointer;"></i>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
