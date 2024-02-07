@@ -77,7 +77,7 @@ function fetchWord() {
     var indexOfWord = Math.floor(Math.random() * words.length);
     currentWord = words[indexOfWord].word;
     currentHint = words[indexOfWord].hint;
-    document.getElementById("hint").innerHTML = currentHint;
+    document.getElementById("hint").innerHTML = "Hint: " +currentHint;
 
     for (i = 0; i < currentWord.length; i++) {
         wordToShow += "_ ";
