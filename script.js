@@ -69,6 +69,11 @@ var words = [
 ];
 
 function fetchWord() {
+    totalTries = 0
+    wordToShow = "";
+    document.getElementById("try").innerText = totalTries
+    document.getElementById("hangman").setAttribute("src", `assets/hangman-${totalTries}.svg`)
+    createLetterButtons();
     var indexOfWord = Math.floor(Math.random() * words.length);
     currentWord = words[indexOfWord].word;
     currentHint = words[indexOfWord].hint;
@@ -98,18 +103,36 @@ function checkLetter(letter) {
     }
     wordToShow = newWordToShow;
     document.getElementById("word").innerHTML = wordToShow;
+
+    setTimeout(() => {
+        gameStatus()
+    }, 500);
     var buttonId = "btn_" + letter.toUpperCase();
     document.getElementById(buttonId).disabled = true;
+}
+function gameStatus() {
     if (totalTries != 6) {
         if (!wordToShow.includes("_")) {
-            alert("Congratulations! You've guessed the word correctly: " + currentWord);
+            Swal.fire(
+                'Good job!',
+                'You have guessed the correct word : ' + currentWord,
+                'success'
+            )
+            fetchWord()
         }
     } else {
-        alert("Out Of tries")
+        Swal.fire(
+            'Out Of Tries',
+            'The correct word was : ' + currentWord,
+            'error'
+        ).then(() => {
+            fetchWord()
+        })
     }
 }
 function createLetterButtons() {
     var lettersDiv = document.getElementById("letters");
+    lettersDiv.innerHTML = "";
     for (var i = 65; i <= 90; i++) {
         var letter = String.fromCharCode(i);
         var button = document.createElement("button");
@@ -121,4 +144,3 @@ function createLetterButtons() {
 }
 
 fetchWord();
-createLetterButtons();

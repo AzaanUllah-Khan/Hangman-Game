@@ -18,7 +18,7 @@ body{
     width: 0;
 }
 .container{
-    width: 750px;
+    width: 780px;
     background-color: white;
     padding: 30px;
     border-radius: 20px;
@@ -38,6 +38,7 @@ body{
 }
 .container .right-side h1{
     font-size: 30px;
+    text-align: center;
 }
 .container .right-side p{
     font-size: 16px;
