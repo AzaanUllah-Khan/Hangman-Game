@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    background-color: #3457D5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+.container{
+    width: 750px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.container img{
+    width: 260px;
+}
+.container .right-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .right-side h1{
+    font-size: 30px;
+}
+.container .right-side p{
+    font-size: 16px;
+    text-align: center;
+}
+.container .right-side p.wrong{
+    color: red;
+    font-weight: bold;
+}
+.container .right-side p.wrong span{
+    color: rgb(255, 111, 0)
+}
+.container .right-side #letters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.container .right-side #letters button{
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.container .right-side #letters button:hover{
+    background-color: #333333e3;
+}
+.container .right-side #letters button:disabled{
+    background-color: #333333e3;
+}
+@media screen and (max-width: 750px) {
+    .container{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .container img{
+        width: 180px;
+    }
+    .container .right-side{
+        gap: 7px;
+    }
+    }
+    .container .right-side h1{
+        font-size: 24px;
+    }
+    .container .right-side p{
+        font-size: 14px;
+        text-align: center;
+    }
+    .container .right-side #letters{
+        margin-top: 10px;
+    }
